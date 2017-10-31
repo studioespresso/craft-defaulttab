@@ -1,0 +1,23 @@
+{#
+/**
+ * Default Tab plugin for Craft CMS
+ *
+ * Default Tab Settings.twig
+ *
+ * @author    Studio Espresso
+ * @copyright Copyright (c) 2017 Studio Espresso
+ * @link      https://studioespresso.co
+ * @package   DefaultTab
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'Default tab title',
+    instructions: 'This will be a the title of the tab created for every new section',
+    id: 'defaultTitle',
+    name: 'defaultTitle',
+    value: settings['defaultTitle']})
+}}
