@@ -13,8 +13,8 @@ class DefaultTabService extends BaseApplicationComponent
 	}
 
 	public function addTab($section) {
-		if($this->settings['defaultTitle']) {
-			$tabTitle = $this->settings['defaultTitle'];
+		if($this->settings['tabTitle']) {
+			$tabTitle = $this->settings['tabTitle'];
 		} else {
 			$tabTitle = Craft::t('Content');
 		}
