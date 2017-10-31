@@ -152,7 +152,7 @@ class DefaultTabPlugin extends BasePlugin {
 	protected function defineSettings()
 	{
 		return array(
-			'defaultTitle' => array(AttributeType::String, 'label' => 'Default tab title', 'default' => 'Content'),
+			'tabTitle' => array(AttributeType::String, 'label' => 'Default tab title', 'default' => 'Content'),
 		);
 	}
 

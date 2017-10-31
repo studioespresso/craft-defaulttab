@@ -4,10 +4,24 @@ namespace Craft;
 
 class DefaultTabService extends BaseApplicationComponent
 {
-    public function addTab($section) {
+
+	public $settings;
+
+	public function __construct() {
+		$this->settings = craft()->plugins->getPlugin( 'defaulttab' )->getSettings();
+
+	}
+
+	public function addTab($section) {
+		if($this->settings['defaultTitle']) {
+			$tabTitle = $this->settings['defaultTitle'];
+		} else {
+			$tabTitle = Craft::t('Content');
+		}
         $entryTypes = craft()->sections->getEntryTypesBySectionId($section->id);
         foreach ($entryTypes as $entryType) {
-	        $postedFieldLayout = array('content' => array());
+
+	        $postedFieldLayout = array($tabTitle => array());
 
 	        $fieldLayout = craft()->fields->assembleLayout($postedFieldLayout);
 	        $fieldLayout->type = ElementType::Entry;
