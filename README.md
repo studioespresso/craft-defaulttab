@@ -6,7 +6,7 @@ When building sites with Craft CMS, you've probably done this a couple of times:
 
 ## Installation
 
-To install Splashing Images, follow these steps:
+To install Default Tab, follow these steps:
 
 1. Download & unzip the file and place the `defaulttab` directory into your `craft/plugins` directory
 2. Install plugin in the Craft Control Panel under Settings > Plugins
