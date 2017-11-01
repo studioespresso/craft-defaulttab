@@ -2,7 +2,7 @@
 
 <img src="http://studioespresso.co/assets/plugins/craft_defaulttab_banner.png">
 
-When building sites with Craft CMS, you've probably done this a couple of times: you create a new section, you go to add fields and the first thing you have to do is add a news tab. Every time. This plugin aims to fix that 🎉.
+When building sites with Craft CMS, you've probably done this a couple of times: you create a new section, you go to add fields and the first thing you have to do is add a new tab. Every time. This plugin aims to fix that 🎉.
 
 ## Installation
 
@@ -16,6 +16,6 @@ Default Tab works on Craft 2.4.x, 2.5.x. and 2.6.x
 
 ## Settings
 - Tab title: set the title for your default tab
-- Use title field: enable this give each new section a title field (only applies to Single sections)
+- Use title field: enabling this gives each new section a title field (only applies to Single sections)
 
 Brought to you by [Studio Espresso](https://studioespresso.co)
