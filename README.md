@@ -1,5 +1,7 @@
 # Default Tab for Craft CMS
 
+<img src="http://studioespresso.co/assets/plugins/craft_defaulttab_banner.png">
+
 When building sites with Craft CMS, you've probably done this a couple of times: you create a new section, you go to add fields and the first thing you have to do is add a news tab. Every time. This plugin aims to fix that 🎉.
 
 ## Installation
