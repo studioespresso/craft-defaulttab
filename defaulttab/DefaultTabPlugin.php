@@ -153,6 +153,7 @@ class DefaultTabPlugin extends BasePlugin {
 	{
 		return array(
 			'tabTitle' => array(AttributeType::String, 'label' => 'Default tab title', 'default' => 'Content'),
+			'hasTitleField' => array(AttributeType::Bool, 'label' => 'Should a new section have title field ', 'default' => true),
 		);
 	}
 

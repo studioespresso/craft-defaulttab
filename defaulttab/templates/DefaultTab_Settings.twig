@@ -21,3 +21,13 @@
     name: 'tabTitle',
     value: settings['tabTitle']})
 }}
+
+{{ forms.lightswitchField({
+    label: 'Should every section have a title field?'|t,
+    instructions: 'Only applied to Single sections (channels and structures have titles by default)'|t,
+    id: 'hasTitleField',
+    name: 'hasTitleField',
+    value: "1",
+    errors: settings.getErrors('hasTitleField'),
+    on: (settings['hasTitleField'] is defined) ? settings['hasTitleField'] : ""})
+}}

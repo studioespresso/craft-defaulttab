@@ -12,8 +12,8 @@ To install Splashing Images, follow these steps:
 
 Default Tab works on Craft 2.4.x, 2.5.x. and 2.6.x
 
-## Configuration
-
-Install the plugin and set a default title for your first tab. If you don't, the default title will be "Content". That's it. Enjoy.
+## Settings
+- Tab title: set the title for your default tab
+- Use title field: enable this give each new section a title field (only applies to Single sections)
 
 Brought to you by [Studio Espresso](https://studioespresso.co)

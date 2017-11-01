@@ -13,11 +13,7 @@ class DefaultTabService extends BaseApplicationComponent
 	}
 
 	public function addTab($section) {
-		if($this->settings['tabTitle']) {
-			$tabTitle = $this->settings['tabTitle'];
-		} else {
-			$tabTitle = Craft::t('Content');
-		}
+		$tabTitle = $this->settings['tabTitle'] ? $this->settings['tabTitle'] : Craft::t('Content');
         $entryTypes = craft()->sections->getEntryTypesBySectionId($section->id);
         foreach ($entryTypes as $entryType) {
 
@@ -26,6 +22,9 @@ class DefaultTabService extends BaseApplicationComponent
 	        $fieldLayout = craft()->fields->assembleLayout($postedFieldLayout);
 	        $fieldLayout->type = ElementType::Entry;
 	        $entryType->setFieldLayout($fieldLayout);
+	        if($this->settings['hasTitleField']) {
+	        	$entryType->hasTitleField = true;
+	        }
 
 	        // Save it
 	        if (craft()->sections->saveEntryType($entryType))
