@@ -17,5 +17,6 @@ Default Tab works on Craft 2.4.x, 2.5.x. and 2.6.x
 ## Settings
 - Tab title: set the title for your default tab
 - Use title field: enabling this gives each new section a title field (only applies to Single sections)
+- Select the field groups you want to add to your new sections by default. Fields in those groups will be added to the section.
 
 Brought to you by [Studio Espresso](https://studioespresso.co)
