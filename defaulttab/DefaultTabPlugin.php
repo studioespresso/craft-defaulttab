@@ -46,9 +46,7 @@ class DefaultTabPlugin extends BasePlugin {
 		} );
 		parent::init();
 
-
 	}
-
 
 	/**
 	 * @return mixed
@@ -68,7 +66,7 @@ class DefaultTabPlugin extends BasePlugin {
 	 * @return string
 	 */
 	public function getDocumentationUrl() {
-		return 'https://github.com/studioespresso/defaulttab/blob/master/README.md';
+		return 'https://github.com/studioespresso/craft-defaulttab/blob/master/README.md';
 	}
 
 	/**
