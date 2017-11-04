@@ -31,6 +31,7 @@
     errors: settings.getErrors('hasTitleField'),
     on: (settings['hasTitleField'] is defined) ? settings['hasTitleField'] : ""})
 }}
+{% if fieldGroups|length %}
 <div class="field" id="settings-hasTitleField-field">
     <div class="heading">
         <label id="settings-label" for="settings-hasTitleField">Default field groups</label>
@@ -52,3 +53,4 @@
         } only %}<br>
     {% endfor %}
 </div>
+{% endif %}
