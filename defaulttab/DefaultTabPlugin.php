@@ -75,7 +75,7 @@ class DefaultTabPlugin extends BasePlugin {
 	 * @return string
 	 */
 	public function getReleaseFeedUrl() {
-		return 'https://raw.githubusercontent.com/studioespresso/defaulttab/master/releases.json';
+		return 'https://raw.githubusercontent.com/studioespresso/craft-defaulttab/master/releases.json';
 	}
 
 	/**
