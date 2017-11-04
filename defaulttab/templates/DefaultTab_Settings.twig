@@ -31,3 +31,26 @@
     errors: settings.getErrors('hasTitleField'),
     on: (settings['hasTitleField'] is defined) ? settings['hasTitleField'] : ""})
 }}
+{% if fieldGroups|length %}
+<div class="field" id="settings-hasTitleField-field">
+    <div class="heading">
+        <label id="settings-label" for="settings-hasTitleField">Default field groups</label>
+        <div class="instructions"><p>You can also assign one of more field groups to section by default (note that these
+                will be add on <strong>all</strong> sections).</p>
+        </div>
+    </div>
+    {% for key, option in fieldGroups %}
+        {%- set optionLabel = (option.label is defined ? option.label : option) %}
+        {%- set optionValue = (option.value is defined ? option.value : key) -%}
+
+        {% include "_includes/forms/checkbox" with {
+        label:     optionLabel,
+        id:        (loop.first and id is defined ? id : null),
+        name:      'defaultGroups[]',
+        value:     optionValue,
+        checked:   (optionValue in settings.defaultGroups),
+        autofocus: (autofocus is defined and autofocus and loop.first and not craft.request.isMobileBrowser(true))
+        } only %}<br>
+    {% endfor %}
+</div>
+{% endif %}
