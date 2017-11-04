@@ -53,127 +53,123 @@ class DefaultTabPlugin extends BasePlugin {
 	/**
 	 * @return mixed
 	 */
-	public function getName()
-	{
-		return Craft::t('Default Tab');
+	public function getName() {
+		return Craft::t( 'Default Tab' );
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function getDescription()
-	{
-		return Craft::t('Adds a tab to every new section you create');
+	public function getDescription() {
+		return Craft::t( 'Adds a tab to every new section you create' );
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getDocumentationUrl()
-	{
+	public function getDocumentationUrl() {
 		return 'https://github.com/studioespresso/defaulttab/blob/master/README.md';
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getReleaseFeedUrl()
-	{
+	public function getReleaseFeedUrl() {
 		return 'https://raw.githubusercontent.com/studioespresso/defaulttab/master/releases.json';
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getVersion()
-	{
+	public function getVersion() {
 		return '1.0.0';
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getSchemaVersion()
-	{
+	public function getSchemaVersion() {
 		return '1.0.0';
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getDeveloper()
-	{
+	public function getDeveloper() {
 		return 'Studio Espresso';
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getDeveloperUrl()
-	{
+	public function getDeveloperUrl() {
 		return 'https://studioespresso.co';
 	}
 
 	/**
 	 * @return bool
 	 */
-	public function hasCpSection()
-	{
+	public function hasCpSection() {
 		return false;
 	}
 
 	/**
 	 */
-	public function onBeforeInstall()
-	{
+	public function onBeforeInstall() {
 	}
 
 	/**
 	 */
-	public function onAfterInstall()
-	{
+	public function onAfterInstall() {
 	}
 
 	/**
 	 */
-	public function onBeforeUninstall()
-	{
+	public function onBeforeUninstall() {
 	}
 
 	/**
 	 */
-	public function onAfterUninstall()
-	{
+	public function onAfterUninstall() {
 	}
 
 	/**
 	 * @return array
 	 */
-	protected function defineSettings()
-	{
+	protected function defineSettings() {
 		return array(
-			'tabTitle' => array(AttributeType::String, 'label' => 'Default tab title', 'default' => 'Content'),
-			'hasTitleField' => array(AttributeType::Bool, 'label' => 'Should a new section have title field ', 'default' => true),
+			'tabTitle'      => array( AttributeType::String, 'label' => 'Default tab title', 'default' => 'Content' ),
+			'hasTitleField' => array(
+				AttributeType::Bool,
+				'label'   => 'Should a new section have title field ',
+				'default' => true
+			),
+			'defaultGroups' => array( AttributeType::Mixed, 'label' => 'Default field groups ', 'default' => true ),
 		);
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function getSettingsHtml()
-	{
-		return craft()->templates->render('defaulttab/DefaultTab_Settings', array(
-			'settings' => $this->getSettings()
-		));
+	public function getSettingsHtml() {
+		$groups      = craft()->fields->getAllGroups();
+		$fieldGroups = array();
+		foreach ( $groups as $group ) {
+			$fieldGroups[ $group->id ] = $group->name;
+		}
+
+		return craft()->templates->render( 'defaulttab/DefaultTab_Settings', array(
+			'settings'    => $this->getSettings(),
+			'fieldGroups' => $fieldGroups
+		) );
 	}
 
 	/**
-	 * @param mixed $settings  The plugin's settings
+	 * @param mixed $settings The plugin's settings
 	 *
 	 * @return mixed
 	 */
-	public function prepSettings($settings)
-	{
+	public function prepSettings( $settings ) {
 		// Modify $settings here...
 
 		return $settings;
