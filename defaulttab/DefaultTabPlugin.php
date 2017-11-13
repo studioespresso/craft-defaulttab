@@ -79,7 +79,7 @@ class DefaultTabPlugin extends BasePlugin {
 	 * @return string
 	 */
 	public function getVersion() {
-		return '1.1.0';
+		return '1.1.1';
 	}
 
 	/**
