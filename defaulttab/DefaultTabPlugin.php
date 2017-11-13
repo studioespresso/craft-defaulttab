@@ -79,7 +79,7 @@ class DefaultTabPlugin extends BasePlugin {
 	 * @return string
 	 */
 	public function getVersion() {
-		return '1.1.0';
+		return '1.1.1';
 	}
 
 	/**
@@ -167,8 +167,9 @@ class DefaultTabPlugin extends BasePlugin {
 	 * @return mixed
 	 */
 	public function prepSettings( $settings ) {
-		// Modify $settings here...
-
+		if(!isset($settings['defaultGroups'])) {
+			$settings['defaultGroups'] = false;
+		}
 		return $settings;
 	}
 

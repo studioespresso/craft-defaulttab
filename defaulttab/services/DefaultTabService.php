@@ -16,7 +16,7 @@ class DefaultTabService extends BaseApplicationComponent {
 		$entryTypes = craft()->sections->getEntryTypesBySectionId( $section->id );
 		foreach ( $entryTypes as $entryType ) {
 			$tabs = array( $tabTitle => array() );
-			if ( $this->settings->defaultGroups ) {
+			if ( is_array($this->settings->defaultGroups) ) {
 				foreach ( $this->settings->defaultGroups as $groupId ) {
 					$fieldGroup       = craft()->fields->getGroupById( $groupId );
 					$fieldGroupFields = craft()->fields->getFieldsByGroupId( $groupId );
