@@ -167,8 +167,9 @@ class DefaultTabPlugin extends BasePlugin {
 	 * @return mixed
 	 */
 	public function prepSettings( $settings ) {
-		// Modify $settings here...
-
+		if(!isset($settings['defaultGroups'])) {
+			$settings['defaultGroups'] = false;
+		}
 		return $settings;
 	}
 
